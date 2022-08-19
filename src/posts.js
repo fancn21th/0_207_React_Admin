@@ -5,6 +5,11 @@ import {
   TextField,
   ReferenceField,
   EditButton,
+  Edit,
+  SimpleForm,
+  ReferenceInput,
+  SelectInput,
+  TextInput,
 } from "react-admin";
 
 export const PostList = () => (
@@ -20,4 +25,17 @@ export const PostList = () => (
       <EditButton />
     </Datagrid>
   </List>
+);
+
+export const PostEdit = () => (
+  <Edit>
+    <SimpleForm>
+      <ReferenceInput source="userId" reference="users">
+        <SelectInput optionText="id" />
+      </ReferenceInput>
+      <TextInput source="id" />
+      <TextInput source="title" />
+      <TextInput source="body" />
+    </SimpleForm>
+  </Edit>
 );
